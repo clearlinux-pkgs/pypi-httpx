@@ -4,7 +4,7 @@
 #
 Name     : pypi-httpx
 Version  : 0.21.2
-Release  : 23
+Release  : 24
 URL      : https://files.pythonhosted.org/packages/cc/51/3dc36938b7476c8890a55e3bc594b72ce6d33a1ac45fc3a2dbb503d301aa/httpx-0.21.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cc/51/3dc36938b7476c8890a55e3bc594b72ce6d33a1ac45fc3a2dbb503d301aa/httpx-0.21.2.tar.gz
 Summary  : The next generation HTTP client.
@@ -14,12 +14,8 @@ Requires: pypi-httpx-bin = %{version}-%{release}
 Requires: pypi-httpx-license = %{version}-%{release}
 Requires: pypi-httpx-python = %{version}-%{release}
 Requires: pypi-httpx-python3 = %{version}-%{release}
-Requires: charset-normalizer
+Requires: pypi(charset_normalizer)
 BuildRequires : buildreq-distutils3
-Provides: httpx
-Provides: httpx-python
-Provides: httpx-python3
-BuildRequires : charset-normalizer
 BuildRequires : pypi(certifi)
 BuildRequires : pypi(charset_normalizer)
 BuildRequires : pypi(sniffio)
@@ -79,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641443260
+export SOURCE_DATE_EPOCH=1641844342
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
