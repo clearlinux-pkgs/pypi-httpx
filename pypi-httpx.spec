@@ -4,7 +4,7 @@
 #
 Name     : pypi-httpx
 Version  : 0.21.3
-Release  : 25
+Release  : 27
 URL      : https://files.pythonhosted.org/packages/89/b8/1f5ff09a44a2467f954220ccd849e0dc89b87927d690d49c0df69d183974/httpx-0.21.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/89/b8/1f5ff09a44a2467f954220ccd849e0dc89b87927d690d49c0df69d183974/httpx-0.21.3.tar.gz
 Summary  : The next generation HTTP client.
@@ -75,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641940214
+export SOURCE_DATE_EPOCH=1641991136
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -86,6 +86,7 @@ export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . httpcore
+pypi-dep-fix.py . rfc3986
 python3 setup.py build
 
 %install
@@ -95,6 +96,7 @@ mkdir -p %{buildroot}/usr/share/package-licenses/pypi-httpx
 cp %{_builddir}/httpx-0.21.3/LICENSE.md %{buildroot}/usr/share/package-licenses/pypi-httpx/2f9a422e6ae22185bd3e9cdaec727ac95ab47bbb
 python3 -tt setup.py build  install --root=%{buildroot}
 pypi-dep-fix.py %{buildroot} httpcore
+pypi-dep-fix.py %{buildroot} rfc3986
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
