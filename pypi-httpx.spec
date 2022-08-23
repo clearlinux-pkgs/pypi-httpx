@@ -4,7 +4,7 @@
 #
 Name     : pypi-httpx
 Version  : 0.23.0
-Release  : 35
+Release  : 36
 URL      : https://files.pythonhosted.org/packages/43/cd/677173d194b4839e5b196709e3819ffca2a4bc58b0538f4ae4be877ad480/httpx-0.23.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/43/cd/677173d194b4839e5b196709e3819ffca2a4bc58b0538f4ae4be877ad480/httpx-0.23.0.tar.gz
 Summary  : The next generation HTTP client.
