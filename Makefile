@@ -1,5 +1,5 @@
 PKG_NAME := pypi-httpx
-URL = https://files.pythonhosted.org/packages/43/cd/677173d194b4839e5b196709e3819ffca2a4bc58b0538f4ae4be877ad480/httpx-0.23.0.tar.gz
+URL = https://files.pythonhosted.org/packages/8a/df/a3e8b91dfb452e645ef110985a30f0915276a1a2144004c7671c07bb203c/httpx-0.23.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
