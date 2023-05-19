@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-httpx
-Version  : 0.24.0
-Release  : 44
-URL      : https://files.pythonhosted.org/packages/ae/23/f7beaf11a8b95fc173b8979c4bfd23ea7711c5ebd458d657d24a59df7e9f/httpx-0.24.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/ae/23/f7beaf11a8b95fc173b8979c4bfd23ea7711c5ebd458d657d24a59df7e9f/httpx-0.24.0.tar.gz
+Version  : 0.24.1
+Release  : 45
+URL      : https://files.pythonhosted.org/packages/f8/2a/114d454cb77657dbf6a293e69390b96318930ace9cd96b51b99682493276/httpx-0.24.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/f8/2a/114d454cb77657dbf6a293e69390b96318930ace9cd96b51b99682493276/httpx-0.24.1.tar.gz
 Summary  : The next generation HTTP client.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -18,6 +18,7 @@ Requires: pypi-httpx-python3 = %{version}-%{release}
 Requires: pypi(charset_normalizer)
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(charset_normalizer)
+BuildRequires : pypi(hatch_fancy_pypi_readme)
 BuildRequires : pypi(hatchling)
 # Suppress stripping binaries
 %define __strip /bin/true
@@ -69,10 +70,10 @@ python3 components for the pypi-httpx package.
 
 
 %prep
-%setup -q -n httpx-0.24.0
-cd %{_builddir}/httpx-0.24.0
+%setup -q -n httpx-0.24.1
+cd %{_builddir}/httpx-0.24.1
 pushd ..
-cp -a httpx-0.24.0 buildavx2
+cp -a httpx-0.24.1 buildavx2
 popd
 
 %build
@@ -80,15 +81,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681224216
+export SOURCE_DATE_EPOCH=1684513023
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . httpcore
 pypi-dep-fix.py . rfc3986
