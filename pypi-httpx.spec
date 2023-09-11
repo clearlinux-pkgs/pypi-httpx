@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-httpx
-Version  : 0.24.1
-Release  : 45
-URL      : https://files.pythonhosted.org/packages/f8/2a/114d454cb77657dbf6a293e69390b96318930ace9cd96b51b99682493276/httpx-0.24.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/f8/2a/114d454cb77657dbf6a293e69390b96318930ace9cd96b51b99682493276/httpx-0.24.1.tar.gz
+Version  : 0.25.0
+Release  : 46
+URL      : https://files.pythonhosted.org/packages/a5/24/dbc981590a8b72ddd5f954fbddb1da010ae844a1cde904bca3c9380ccb1d/httpx-0.25.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/a5/24/dbc981590a8b72ddd5f954fbddb1da010ae844a1cde904bca3c9380ccb1d/httpx-0.25.0.tar.gz
 Summary  : The next generation HTTP client.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -70,10 +70,10 @@ python3 components for the pypi-httpx package.
 
 
 %prep
-%setup -q -n httpx-0.24.1
-cd %{_builddir}/httpx-0.24.1
+%setup -q -n httpx-0.25.0
+cd %{_builddir}/httpx-0.25.0
 pushd ..
-cp -a httpx-0.24.1 buildavx2
+cp -a httpx-0.25.0 buildavx2
 popd
 
 %build
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684513023
+export SOURCE_DATE_EPOCH=1694445233
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
