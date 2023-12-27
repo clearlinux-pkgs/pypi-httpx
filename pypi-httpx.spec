@@ -7,7 +7,7 @@
 #
 Name     : pypi-httpx
 Version  : 0.26.0
-Release  : 51
+Release  : 52
 URL      : https://files.pythonhosted.org/packages/bd/26/2dc654950920f499bd062a211071925533f821ccdca04fa0c2fd914d5d06/httpx-0.26.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/bd/26/2dc654950920f499bd062a211071925533f821ccdca04fa0c2fd914d5d06/httpx-0.26.0.tar.gz
 Summary  : The next generation HTTP client.
